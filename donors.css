@@ -1,0 +1,17 @@
+
+.donors-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.donors-table th,
+.donors-table td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+.donors-table th {
+    background-color: #f2f2f2;
+}
+

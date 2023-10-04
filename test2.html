@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <form id="myForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email">
+        <input type="submit" value="Submit">
+    </form>
+    
+    <table id="myTable">
+        <tr>
+        <th>Name</th>
+        <th>Email</th>
+        </tr>
+    </table>
+    <script>
+      
+    document.getElementById('myForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // prevent form submission before updating the table
+
+    // get input values
+    var name = document.getElementById('name').value;
+    var email = document.getElementById('email').value;
+
+    // create a new row in the table
+    var newRow = document.createElement('tr');
+
+    // create new cells to hold the data
+    var nameCell = document.createElement('td');
+    var emailCell = document.createElement('td');
+
+    // set the cell values
+    nameCell.textContent = name;
+    emailCell.textContent = email;
+
+    // append cells to the row
+    newRow.appendChild(nameCell);
+    newRow.appendChild(emailCell);
+
+    // append the row to the table
+    document.getElementById('myTable').appendChild(newRow);
+
+    // reset the form
+    document.getElementById('myForm').reset();
+    });
+
+
+    </script>
+  
+
+</body>
+</html>

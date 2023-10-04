@@ -1,0 +1,129 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body{
+            background-image: url(pictures/pexels-lucas-oliveira-4680300.jpg);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            }
+    .img{
+            height: 100%;
+            width: 100%;
+        }
+   nav {
+      background-color: #333;
+      color: #fff;
+      padding: 10px;
+      text-align: center;
+       }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 10px;
+        }
+    section {
+        padding: 40px;
+        text-align: center;
+        }
+    </style>
+    <title>Donors Table</title>
+    <link rel="stylesheet" type="text/css" href="donors.css">
+    
+</head>
+<body>
+    <nav>
+        <a href="blood.html">Home</a>
+        <a href="donors.html">Donate</a>
+        <a href="centers.html">Centers</a>
+        <a href="bloodtypes.html">Blood types</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+          <h1>Register as a donor here!</h1>
+    <form id="regform">
+        <ul>
+            <input type="text" id ="sirname" placeholder="Sirname">
+            <input type="text" id ="fstname" placeholder="Firstname">
+            <input type="text" id ="address" placeholder="Address">
+            <input type="date" id ="bdate" placeholder="Birthdate">
+            <input type="email" id ="email" placeholder="Email address">
+            <button id="register-donor" type="button" onclick="addDonornm1(),addDonornm2(),addDonoradrs(),addDonorbdt(),addDonoreml()">Register</button>
+        </ul>
+
+        <ul id="donorlist">
+
+        </ul>
+
+    </form>
+    <table class="donors-table" id="donortable">
+        <tr>
+            <th>Sirname</th>
+            <th>First name</th>
+            <th>Address</th>
+            <th>Birthdate</th>
+            <th>Email</th>
+        </tr>
+        <tr>
+            <td>Aiman</td>
+            <td>Hussein</td>
+            <td>Rubaga</td>
+            <td>1990-05-20</td>
+            <td>aiman@gmail.com</td>
+        </tr>
+        <tr>
+            <td>Muhammad</td>
+            <td>Malugge</td>
+            <td>Bunamwaya</td>
+            <td>1985-09-10</td>
+            <td>mmalugge@gmail.com</td>
+        </tr>
+        
+    </table>
+    <script>
+       function sayhello(){
+        var userinput = document.querySelector("#newdonor").ariaValue
+        alert("Hello + userinput")
+       } 
+
+       function addDonornm1(){
+        var li = document.createElement("li")
+        li.innerHTML = document.querySelector("#sirname").value
+        document.querySelector("#donorlist").append(li)
+        document.querySelector("#sirname").value=""
+        }
+
+        function addDonornm2(){
+        var li = document.createElement("li")
+        li.innerHTML = document.querySelector("#fstname").value
+        document.querySelector("#donorlist").append(li)
+        document.querySelector("#fstname").value=""
+        }
+
+        function addDonoradrs(){
+        var li = document.createElement("li")
+        li.innerHTML = document.querySelector("#address").value
+        document.querySelector("#donorlist").append(li)
+        document.querySelector("#address").value=""
+        }
+
+        function addDonorbdt(){
+        var li = document.createElement("li")
+        li.innerHTML = document.querySelector("#bdate").value
+        document.querySelector("#donorlist").append(li)
+        document.querySelector("#bdate").value=""
+        }
+
+        function addDonoreml(){
+        var li = document.createElement("li")
+        li.innerHTML = document.querySelector("#email").value
+        document.querySelector("#donorlist").append(li)
+        document.querySelector("#email").value=""
+        }
+    </script>
+
+
+</body>
+</html>
+

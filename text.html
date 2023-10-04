@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form</title>
+</head>
+<body>
+    <h1>Fill in the Form</h1>
+
+    <form id="myForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" required><br>
+
+        <label for="address">Address:</label>
+        <textarea id="address" required></textarea><br>
+
+        <label for="birthdate">Birthdate:</label>
+        <input type="date" id="birthdate" required><br>
+
+        <label for="contact">Contact:</label>
+        <input type="tel" id="contact" pattern="[0-9]{10}" required><br>
+
+        <input type="submit" value="Submit">
+    </form>
+
+    <script>
+        document.getElementById('myForm').addEventListener('submit', function(e) {
+            e.preventDefault(); // Prevents the form from refreshing the page
+            var name = document.getElementById('name').value;
+            var address = document.getElementById('address').value;
+            var birthdate = document.getElementById('birthdate').value;
+            var contact = document.getElementById('contact').value;
+
+            // Process the form data here (you can send it to a server using AJAX)
+            console.log('Name:', name);
+            console.log('Address:', address);
+            console.log('Birthdate:', birthdate);
+            console.log('Contact:', contact);
+
+            // Reset the form
+            document.getElementById('myForm').reset();
+        });
+    </script>
+</body>
+</html>
+
