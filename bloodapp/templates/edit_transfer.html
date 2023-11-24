@@ -1,0 +1,31 @@
+{% extends './base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+  <body>
+    <header>
+      <h1>EDIT - {{transfer.recipient_name}}</h1>
+    </header>
+
+    <div class="container">
+        <form method="post">
+            {% csrf_token %}
+            {{form|crispy}}
+
+            
+            <input type="submit" class="btn btn-primary">
+            <a type="button" class="btn btn-danger" href ="{%url "add_transfer_page"%}">Cancel</a>
+
+            {% if message %}
+                {{message}}
+            {% endif %}
+
+        </form>
+
+    </div>
+
+
+
+  
+    
+{% endblock content %}

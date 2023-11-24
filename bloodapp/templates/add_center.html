@@ -1,0 +1,42 @@
+{% extends './base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+  <body>
+    <header>
+      <h1>
+        <button type="button" class="btn bg-gradient-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+          ADD CENTER
+        </button>
+      </button></h1>
+    </header>
+    <div class = "container">
+      
+
+      <table class = "table table-striped">
+        <thread>
+          <tr>
+            <th scope = "col">No.</th>
+            <th scope = "col">Center name</th>
+            <th scope = "col">Location</th>
+          </tr>
+        </thread>
+        <tbody>
+          {% for center in centers %}
+            <tr>
+              <th scope="row">{{center.id}}</th>
+              <td>{{center.center_name}}</td>
+              <td>{{center.location}}</td>
+              <td>
+                <a href="{% url 'edit_center_page' center.id%}"><i class="fas fa-edit"></i></a> |
+                <a href="{%url 'delete_center_page' center.id%}" onclick="return confirm('Are you sure you want to delete this center?')"><i class="fas fa-trash-alt"></i></a>
+            </td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    
+    </div>
+  
+    
+{% endblock content %}

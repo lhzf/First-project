@@ -1,0 +1,42 @@
+{% extends './base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+    <header>
+      <h1><button type="button" class="btn bg-gradient-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        ADD TRANSFER
+      </button></h1>
+    </header>
+    <div class = "container">
+
+      <table class = "table table-striped">
+        <thread>
+          <tr>
+            <th scope = "col">transfer id</th>
+            <th scope = "col">date</th>
+            <th scope = "col">recipient name</th>
+            <th scope = "col">blood_type</th>
+            <th scope = "col">qty</th>
+          </tr>
+        </thread>
+        <tbody>
+          {% for transfer in transfers %}
+            <tr>
+              <th scope="row">{{transfer.id}}</th>
+              <td>{{transfer.transfer_date}}</td>
+              <td>{{transfer.recipient_name}}</td>
+              <td>{{transfer.bloodtype_id}}</td>
+              <td>{{transfer.qty}}</td>
+              <td>
+                  <a href="{%url 'edit_transfer_page' transfer.id%}"><i class="fas fa-edit"></i></a> |
+                  <a href="{%url 'delete_transfer_page' transfer.id%}" onclick="return confirm('Are you sure you want to delete this transfer?')"><i class="fas fa-trash-alt"></i></a>
+              </td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+
+    </div>
+  
+    
+{% endblock content %}

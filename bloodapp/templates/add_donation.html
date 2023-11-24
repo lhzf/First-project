@@ -1,0 +1,43 @@
+{% extends './base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+    <header>
+      <h1><button type="button" class="btn bg-gradient-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        ADD DONATION
+      </button></h1>
+    </header>
+    
+
+      <table class = "table table-striped">
+        <thread>
+          <tr>
+            <th scope = "col">No.</th>
+            <th scope = "col">quantity</th>
+            <th scope = "col">date</th>
+            <th scope = "col">donor name</th>
+            <th scope = "col">center id</th>
+          </tr>
+        </thread>
+        <tbody>
+          {% for donation in donations %}
+            <tr>
+              <th scope="row">{{donation.id}}</th>
+              <td>{{donation.quantity}}</td>
+              <td>{{donation.dntn_date}}</td>
+              <td>{{donation.donor_name_id}}</td>
+              <td>{{donation.center_id}}</td>
+              <td>
+                <a href="{% url 'edit_donation_page' donation.id%}"><i class="fas fa-edit"></i></a> |
+                <a href="{%url 'delete_donation_page' donation.id%}" onclick="return confirm('Are you sure you want to delete this donation?')"><i class="fas fa-trash-alt"></i></a>
+            </td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+
+    </div>
+  
+   
+{% endblock content %}

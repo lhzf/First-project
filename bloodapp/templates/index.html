@@ -1,14 +1,9 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Blood Donation Management</title>
-  
-</head>
-<body>
-  <header>
-    <h1>Blood Donation Management</h1>
-  </header>
+{% extends './base.html' %}
 
+{% block content %}
+
+
+    <h1>Blood Donation Management</h1>
   <section>
     <h2>Welcome to our Blood Donation Management Website!</h2>
     <p>
@@ -24,6 +19,7 @@
       <strong>bloodtypes:</strong> Understand the different blood types,their compostion and compatibility with receivers.
     </p>
   </section>
-  <a href="{% url 'page two' %}">page 2</a>
-</body>
-</html>
+
+  
+  {% endblock content %}
+
